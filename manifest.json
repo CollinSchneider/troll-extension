@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "De-troller",
+  "version": "1.0",
+  "description": "De-troll the internet.",
+  "icons": {
+    "16": "troll.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["troll.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
