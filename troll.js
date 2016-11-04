@@ -31,15 +31,12 @@ function walk(node)
 function handleText(textNode)
 {
   var v = textNode.nodeValue;
-  v = v.replace(/\bkill you\b/gi, "I'M AN INTERNET TROLL")
-  v = v.replace(/\bfuck you\b/gi, "I'M AN INTERNET TROLL")
-  v = v.replace(/\bbuild the wall\b/gi, "I'M AN INTERNET TROLL")
-  v = v.replace(/\bbuild that wall\b/gi, "I'M AN INTERNET TROLL")
-  v = v.replace(/\byou suck\b/gi, "I'M AN INTERNET TROLL")
-  v = v.replace(/\byou fucking suck\b/gi, "I'M AN INTERNET TROLL")
-  v = v.replace(/\byou fuckin suck\b/gi, "I'M AN INTERNET TROLL")
-  v = v.replace(/\bfollow back\b/gi, "I'M AN INTERNET TROLL")
-  v = v.replace(/\bnot a scam\b/gi, "I'M AN INTERNET TROLL")
-  v = v.replace(/\bfree iphone\b/gi, "I'M AN INTERNET TROLL")
+
+  var trollPhrases = ['kill you', 'fuck you', 'build the wall', 'build that wall', 'you suck', 'you fucking suck', 'you fuckin suck', 'follow back', 'follow me', 'not a scam', 'free iphone']
+  for (var i = 0; i < trollPhrases.length; i++) {
+    var phrase = trollPhrases[i]
+    v = v.replace(new RegExp(phrase, 'gi'), "I'M AN INTERNET TROLL")
+  }
+
 	textNode.nodeValue = v;
 }
