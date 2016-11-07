@@ -10,9 +10,9 @@ function walk(node)
 
 	switch ( node.nodeType )
 	{
-		case 1:
-		case 9:
-		case 11:
+		case 1: // Element
+		case 9: // Document
+		case 11: // Document Fragment
 			child = node.firstChild;
 			while ( child )
 			{
@@ -22,7 +22,7 @@ function walk(node)
 			}
 			break;
 
-		case 3:
+		case 3: // Text Node
 			handleText(node);
 			break;
 	}
